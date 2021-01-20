@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers;
+use App\Http\Controllers\Profiles;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +23,9 @@ Route::get('/', function () {
 
 Route::get('/', 'App\Http\Controllers\RestoController@index');
 Route::get('users', 'App\Http\Controllers\UserController@index');
+
+Route::post('/post', 'App\Http\Controllers\UserController@post_data');
+Route::get('profile', 'App\Http\Controllers\Profiles@list');
+
+
 

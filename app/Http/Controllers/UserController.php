@@ -13,5 +13,16 @@ class UserController extends Controller
     {
         $data= Http::get("https://reqres.in/api/users?page=1");
         return view('users',["datas"=>$data['data']]);
+       
     }
+
+    public function post_data()
+    {
+        $response = Http::post('http://example.com/users', [
+            'name' => 'Steve',
+            'role' => 'Network Administrator',
+        ]);
+        return $response->status();
+    }
+
 }
